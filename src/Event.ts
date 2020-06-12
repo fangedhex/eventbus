@@ -1,4 +1,4 @@
 /**
  * Just a dummy interface
  */
-export interface Event {}
+export type Event = unknown;

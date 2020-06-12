@@ -8,7 +8,7 @@ export class EventBus {
      * Register a new listener to that event bus
      * @param listener
      */
-    registerListener(listener: Listener) {
+    registerListener(listener: Listener): void {
         this.listeners.push(listener);
     }
 
@@ -16,7 +16,7 @@ export class EventBus {
      * Dispatch an event through our listeners
      * @param event
      */
-    dispatch(event: Event) {
+    dispatch(event: Event): void {
         this.listeners.forEach((listener) => {
             listener.emit(event);
         });

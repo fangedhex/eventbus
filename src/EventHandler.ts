@@ -2,7 +2,7 @@ import "reflect-metadata";
 import { Listener } from "./Listener";
 import { Event } from "./Event";
 
-export function EventHandler(target: Listener, propertyKey: string, descriptor: PropertyDescriptor) {
+export function EventHandler(target: Listener, propertyKey: string, descriptor: PropertyDescriptor): PropertyDescriptor {
     const original = descriptor.value;
 
     const params = Reflect.getMetadata("design:paramtypes", target, propertyKey);
