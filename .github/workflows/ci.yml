@@ -22,6 +22,10 @@ jobs:
           CI: true
       - name: Build
         run: yarn build
+      - name: Lint
+        uses: hallee/eslint-action@1.0.3
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish coverage
         uses: coverallsapp/github-action@master
         with:
