@@ -1,7 +1,9 @@
 import { Event } from "./Event";
 
+type EventFunction = (ev: Event) => void;
+
 export abstract class Listener {
-    private eventsTable?: Function[];
+    private eventsTable?: EventFunction[];
 
     private createTable() {
         this.eventsTable = [];
@@ -11,7 +13,7 @@ export abstract class Listener {
      * Function called by the decorator on a method to add it to the list
      * @param fct
      */
-    addFunction(fct: Function) {
+    addFunction(fct: EventFunction): void {
         if(!this.eventsTable) this.createTable();
         this.eventsTable?.push(fct);
     }
@@ -20,7 +22,7 @@ export abstract class Listener {
      * Called by the EventBus when an event is fired
      * @param event
      */
-    emit(event: Event) {
+    emit(event: Event): void {
         if(!this.eventsTable) this.createTable();
         this.eventsTable?.forEach((callback) => {
             callback(event);

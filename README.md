@@ -8,6 +8,8 @@ if you find it useful :)
 
 ## Example
 ```typescript
+import { EventHandler, Eventbus, Listener } from "@fangedhex/eventbus";
+
 // 1 - Create your events
 class MyCustomEvent {
     constructor(public readonly value: string) {

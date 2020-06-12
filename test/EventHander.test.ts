@@ -5,6 +5,7 @@ class DummyEvent {}
 class DummyListener extends Listener {
     @EventHandler
     dummyFunction(ev: DummyEvent) {
+        console.dir(ev);
     }
 }
 
@@ -13,6 +14,7 @@ describe(EventHandler, () => {
         const listener = new DummyListener();
         listener.dummyFunction(new DummyEvent());
 
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         expect(listener.eventsTable).toHaveLength(1);
     });

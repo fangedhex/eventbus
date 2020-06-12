@@ -16,6 +16,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsnd --respawn src/index.ts",
+    "lint": "eslint **/*.ts",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:dev": "jest --watch --coverage",
