@@ -1,5 +1,14 @@
 {
   "name": "@fangedhex/eventbus",
+  "description": "A small typescript library that provide some eventbus system that is \"\"\"easier\"\"\" to use.",
+  "keywords": [
+    "typescript",
+    "eventbus"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fangedhex/eventbus.git"
+  },
   "version": "1.0.0-rc.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
