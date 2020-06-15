@@ -6,14 +6,19 @@ export function EventHandler(target: Listener, propertyKey: string, descriptor: 
     const original = descriptor.value;
 
     const params = Reflect.getMetadata("design:paramtypes", target, propertyKey);
-    const Type = params[0];
+    if (params !== undefined && Array.isArray(params)) {
+        const Type = params[0];
 
-    descriptor.value = function(ev: Event) {
-        if (ev instanceof Type) {
-            original.call(this, ev);
+        if (Type !== undefined) {
+            descriptor.value = function(ev: Event) {
+                if (ev instanceof Type) {
+                    original.call(this, ev);
+                }
+            }
+
+            target.addFunction(descriptor.value);
         }
     }
 
-    target.addFunction(descriptor.value);
     return descriptor;
 }
