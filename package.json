@@ -20,7 +20,8 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:dev": "jest --watch --coverage",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "update-version": "node scripts/update-version.js"
   },
   "dependencies": {
     "reflect-metadata": "^0.1.13"
