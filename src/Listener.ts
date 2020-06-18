@@ -29,7 +29,7 @@ export abstract class Listener {
     emit(event: Event): void {
         if(!this.eventsTable) this.createTable();
         this.eventsTable?.forEach((callback) => {
-            callback(event);
+            callback.bind(this)(event);
         });
     }
 }
