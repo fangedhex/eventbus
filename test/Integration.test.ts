@@ -6,8 +6,13 @@ class DummyEvent {
 }
 
 class DummyListener extends Listener {
+    private isDefined = true;
+
     @EventHandler
     onHandle(ev: DummyEvent) {
+        expect(this.isDefined).toBeDefined();
+        expect(ev).toBeDefined();
+        expect(ev.done).toBeDefined();
         ev.done();
     }
 }
