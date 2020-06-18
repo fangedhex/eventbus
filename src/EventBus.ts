@@ -1,5 +1,8 @@
 import { Listener } from "./Listener";
 import { Event } from "./Event";
+import * as Debugger from "debug";
+
+const debug = Debugger("eventbus");
 
 export class EventBus {
     private listeners: Listener[] = [];
@@ -9,6 +12,7 @@ export class EventBus {
      * @param listener
      */
     registerListener(listener: Listener): void {
+        debug("Registering listener : %O", listener);
         this.listeners.push(listener);
     }
 
@@ -17,6 +21,7 @@ export class EventBus {
      * @param event
      */
     dispatch(event: Event): void {
+        debug("Dispatching event : %O", event);
         this.listeners.forEach((listener) => {
             listener.emit(event);
         });
