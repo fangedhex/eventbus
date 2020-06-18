@@ -1,4 +1,7 @@
 import { Event } from "./Event";
+import * as Debugger from "debug";
+
+const debug = Debugger("eventbus:listener");
 
 type EventFunction = (ev: Event) => void;
 
@@ -15,6 +18,7 @@ export abstract class Listener {
      */
     addFunction(fct: EventFunction): void {
         if(!this.eventsTable) this.createTable();
+        debug("Adding event function to event table : %O", fct);
         this.eventsTable?.push(fct);
     }
 
