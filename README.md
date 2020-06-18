@@ -6,6 +6,17 @@ A small typescript library that provide some eventbus system that is """easier""
 I made this library that I will use for my bot written in Typescript : I did a separate one so if you can use it 
 if you find it useful :)
 
+## tsconfig.json
+You need at least this 2 options :
+```json
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  }
+}
+```
+
 ## Example
 ```typescript
 import { EventHandler, Eventbus, Listener } from "@fangedhex/eventbus";
