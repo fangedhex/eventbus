@@ -21,6 +21,11 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
+  "release": {
+    "branches": [
+      "master"
+    ]
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsnd --respawn src/index.ts",
@@ -28,8 +33,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:dev": "jest --watch --coverage",
-    "prepublishOnly": "yarn build",
-    "update-version": "node scripts/update-version.js"
+    "prepublishOnly": "yarn build"
   },
   "dependencies": {
     "debug": "^4.1.1",
@@ -46,6 +50,7 @@
     "husky": "^4.2.5",
     "jest": "^26.0.1",
     "jest-mock-extended": "^1.0.8",
+    "semantic-release": "^17.1.1",
     "ts-jest": "^26.1.0",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.9.3"
