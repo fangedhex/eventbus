@@ -1,29 +1,28 @@
 import { EventBus, EventHandler, Listener } from "../src";
 
 class DummyEvent {
-    constructor(readonly done: jest.DoneCallback) {
-    }
+  constructor(readonly done: jest.DoneCallback) {}
 }
 
 class DummyListener extends Listener {
-    private isDefined = true;
+  private isDefined = true;
 
-    @EventHandler
-    onHandle(ev: DummyEvent) {
-        expect(this.isDefined).toBeDefined();
-        expect(ev).toBeDefined();
-        expect(ev.done).toBeDefined();
-        ev.done();
-    }
+  @EventHandler
+  onHandle(ev: DummyEvent) {
+    expect(this.isDefined).toBeDefined();
+    expect(ev).toBeDefined();
+    expect(ev.done).toBeDefined();
+    ev.done();
+  }
 }
 
 describe("Integration", () => {
-    it("handles emitted event", (done) => {
-        const eventBus = new EventBus();
-        const listener = new DummyListener();
+  it("handles emitted event", (done) => {
+    const eventBus = new EventBus();
+    const listener = new DummyListener();
 
-        eventBus.registerListener(listener);
+    eventBus.registerListener(listener);
 
-        eventBus.dispatch(new DummyEvent(done));
-    });
-})
+    eventBus.dispatch(new DummyEvent(done));
+  });
+});
