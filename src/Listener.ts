@@ -1,8 +1,10 @@
 import { Event } from "./Event";
 import * as Debugger from "debug";
 
+/** @internal */
 const debug = Debugger("eventbus:listener");
 
+/** @internal */
 type EventFunction = (ev: Event) => void;
 
 export abstract class Listener {
@@ -15,6 +17,7 @@ export abstract class Listener {
   /**
    * Function called by the decorator on a method to add it to the list
    * @param fct
+   * @internal
    */
   addFunction(fct: EventFunction): void {
     if (!this.eventsTable) this.createTable();
@@ -25,6 +28,7 @@ export abstract class Listener {
   /**
    * Called by the EventBus when an event is fired
    * @param event
+   * @internal
    */
   emit(event: Event): void {
     if (!this.eventsTable) this.createTable();

@@ -2,6 +2,12 @@ import "reflect-metadata";
 import { Listener } from "./Listener";
 import { Event } from "./Event";
 
+/**
+ * Decorates a function as an event handler
+ * @param target Class where the function is
+ * @param propertyKey Name of the function
+ * @param descriptor Descriptior of the function
+ */
 export function EventHandler(
   target: Listener,
   propertyKey: string,
