@@ -1,4 +1,4 @@
-import "reflect-metadata";
+/// <reference types="reflect-metadata" />
 import { Listener } from "./Listener";
 import { Event } from "./Event";
 
