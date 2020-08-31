@@ -26,8 +26,7 @@
   },
   "lint-staged": {
     "*.{js,ts}": [
-      "eslint --fix",
-      "typedoc"
+      "eslint --fix"
     ]
   },
   "release": {
