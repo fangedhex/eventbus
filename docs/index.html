@@ -81,6 +81,13 @@
     <span class="hljs-attr">&quot;emitDecoratorMetadata&quot;</span>: <span class="hljs-literal">true</span>
   }
 }</code></pre>
+				<a href="#reflect-metadata" id="reflect-metadata" style="color: inherit; text-decoration: none;">
+					<h2>Reflect-metadata</h2>
+				</a>
+				<p>You should import reflect-metadata at the top of your main file like this :</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;reflect-metadata&quot;</span>;
+
+<span class="hljs-comment">// YOUR CODE HERE</span></code></pre>
 				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 					<h2>Example</h2>
 				</a>
@@ -88,26 +95,24 @@
 
 <span class="hljs-comment">// 1 - Create your events</span>
 <span class="hljs-keyword">class</span> MyCustomEvent {
-    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">public</span> <span class="hljs-keyword">readonly</span> value: <span class="hljs-built_in">string</span></span>) {
-    }
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">public</span> <span class="hljs-keyword">readonly</span> value: <span class="hljs-built_in">string</span></span>) {}
 }
 
 <span class="hljs-keyword">class</span> MyCustomEvent2 {
-    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">public</span> <span class="hljs-keyword">readonly</span> value: <span class="hljs-built_in">number</span></span>) {
-    }
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">public</span> <span class="hljs-keyword">readonly</span> value: <span class="hljs-built_in">number</span></span>) {}
 }
 
 <span class="hljs-comment">// 2 - Create your listener class</span>
 <span class="hljs-keyword">class</span> MyListener <span class="hljs-keyword">extends</span> Listener {
-    <span class="hljs-meta">@EventHandler</span>
-    onSomething(ev: MyCustomEvent) {
-        <span class="hljs-built_in">console</span>.info(<span class="hljs-string">&quot;TEST : &quot;</span> + ev.value);
-    }
+  <span class="hljs-meta">@EventHandler</span>
+  onSomething(ev: MyCustomEvent) {
+    <span class="hljs-built_in">console</span>.info(<span class="hljs-string">&quot;TEST : &quot;</span> + ev.value);
+  }
 
-    <span class="hljs-meta">@EventHandler</span>
-    onSomething2(ev: MyCustomEvent2) {
-        <span class="hljs-built_in">console</span>.info(<span class="hljs-string">&quot;TEST2 : &quot;</span> + ev.value);
-    }
+  <span class="hljs-meta">@EventHandler</span>
+  onSomething2(ev: MyCustomEvent2) {
+    <span class="hljs-built_in">console</span>.info(<span class="hljs-string">&quot;TEST2 : &quot;</span> + ev.value);
+  }
 }
 
 <span class="hljs-comment">// 3 - And how to use it</span>
@@ -137,10 +142,7 @@ eventbus.dispatch(<span class="hljs-keyword">new</span> MyCustomEvent2(<span cla
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="classes/eventbus.html" class="tsd-kind-icon">Event<wbr>Bus</a>
-					</li>
-					<li class=" tsd-kind-class">
+					<li class=" tsd-kind-class tsd-is-external">
 						<a href="classes/listener.html" class="tsd-kind-icon">Listener</a>
 					</li>
 					<li class=" tsd-kind-function">
@@ -155,9 +157,6 @@ eventbus.dispatch(<span class="hljs-keyword">new</span> MyCustomEvent2(<span cla
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
 		</div>
 	</div>
 </footer>
