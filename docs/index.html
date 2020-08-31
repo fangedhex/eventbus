@@ -1,0 +1,170 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@fangedhex/eventbus</title>
+	<meta name="description" content="Documentation for @fangedhex/eventbus">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@fangedhex/eventbus</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>@fangedhex/eventbus</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#eventbus" id="eventbus" style="color: inherit; text-decoration: none;">
+					<h1>EventBus</h1>
+				</a>
+				<a href="#description" id="description" style="color: inherit; text-decoration: none;">
+					<h2>Description</h2>
+				</a>
+				<p>A small typescript library that provide some eventbus system that is &quot;&quot;&quot;easier&quot;&quot;&quot; to use.</p>
+				<p>I made this library that I will use for my bot written in Typescript : I did a separate one so if you can use it
+				if you find it useful :)</p>
+				<a href="#tsconfigjson" id="tsconfigjson" style="color: inherit; text-decoration: none;">
+					<h2>tsconfig.json</h2>
+				</a>
+				<p>You need at least this 2 options :</p>
+				<pre><code class="language-json">{
+  <span class="hljs-attr">&quot;compilerOptions&quot;</span>: {
+    <span class="hljs-attr">&quot;experimentalDecorators&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">&quot;emitDecoratorMetadata&quot;</span>: <span class="hljs-literal">true</span>
+  }
+}</code></pre>
+				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+					<h2>Example</h2>
+				</a>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { EventHandler, Eventbus, Listener } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@fangedhex/eventbus&quot;</span>;
+
+<span class="hljs-comment">// 1 - Create your events</span>
+<span class="hljs-keyword">class</span> MyCustomEvent {
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">public</span> <span class="hljs-keyword">readonly</span> value: <span class="hljs-built_in">string</span></span>) {
+    }
+}
+
+<span class="hljs-keyword">class</span> MyCustomEvent2 {
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">public</span> <span class="hljs-keyword">readonly</span> value: <span class="hljs-built_in">number</span></span>) {
+    }
+}
+
+<span class="hljs-comment">// 2 - Create your listener class</span>
+<span class="hljs-keyword">class</span> MyListener <span class="hljs-keyword">extends</span> Listener {
+    <span class="hljs-meta">@EventHandler</span>
+    onSomething(ev: MyCustomEvent) {
+        <span class="hljs-built_in">console</span>.info(<span class="hljs-string">&quot;TEST : &quot;</span> + ev.value);
+    }
+
+    <span class="hljs-meta">@EventHandler</span>
+    onSomething2(ev: MyCustomEvent2) {
+        <span class="hljs-built_in">console</span>.info(<span class="hljs-string">&quot;TEST2 : &quot;</span> + ev.value);
+    }
+}
+
+<span class="hljs-comment">// 3 - And how to use it</span>
+<span class="hljs-keyword">const</span> eventbus = <span class="hljs-keyword">new</span> Eventbus();
+<span class="hljs-keyword">const</span> listener = <span class="hljs-keyword">new</span> MyListener();
+eventbus.registerListener(listener);
+
+eventbus.dispatch(<span class="hljs-keyword">new</span> MyCustomEvent(<span class="hljs-string">&quot;myvalue&quot;</span>));
+eventbus.dispatch(<span class="hljs-keyword">new</span> MyCustomEvent2(<span class="hljs-number">5.5</span>));
+eventbus.dispatch(<span class="hljs-keyword">new</span> MyCustomEvent2(<span class="hljs-number">5.8</span>));</code></pre>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h2>Contributing</h2>
+				</a>
+				<p>I did this code in less than 1 day so it&#39;s pretty simple but if you know a better way to code it or you think
+				my tests are not good, feel free to fork and make a pull request later :)</p>
+				<p>I also added a FUNDING.yml in this project but I don&#39;t expect this project will bring some funding
+				because it is quite simple to make.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/eventbus.html" class="tsd-kind-icon">Event<wbr>Bus</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/listener.html" class="tsd-kind-icon">Listener</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#eventhandler" class="tsd-kind-icon">Event<wbr>Handler</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

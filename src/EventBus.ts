@@ -2,6 +2,7 @@ import { Listener } from "./Listener";
 import { Event } from "./Event";
 import * as Debugger from "debug";
 
+/** @internal */
 const debug = Debugger("eventbus");
 
 export class EventBus {
