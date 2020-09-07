@@ -29,11 +29,6 @@
       "eslint --fix"
     ]
   },
-  "release": {
-    "branches": [
-      "master"
-    ]
-  },
   "scripts": {
     "build": "tsc",
     "dev": "tsnd --respawn src/index.ts",
