@@ -1,8 +1,8 @@
-import { EventHandler, Listener } from "../src";
+import { EventHandler } from "../src";
 
 class DummyEvent {}
 
-class DummyListener extends Listener {
+class DummyListener {
   @EventHandler
   dummyFunction(ev: DummyEvent) {
     console.dir(ev);
