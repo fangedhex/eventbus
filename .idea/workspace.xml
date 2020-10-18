@@ -20,15 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2592b3cb-b40b-424e-9a71-7cc3d89b300e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/eventbus.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.releaserc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/release.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/release.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +29,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1hBZIvkYB7McnwtUosMyn6BAtcX" />
@@ -49,10 +47,28 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="All Tests" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -62,8 +78,40 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1599486369093</updated>
-      <workItem from="1599486370190" duration="96000" />
+      <workItem from="1599486370190" duration="2038000" />
+      <workItem from="1599497784082" duration="2305000" />
+      <workItem from="1599556011147" duration="3193000" />
+      <workItem from="1599651429312" duration="480000" />
     </task>
+    <task id="LOCAL-00001" summary="build: configure semantic-release">
+      <created>1599486579957</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1599486579957</updated>
+    </task>
+    <task id="LOCAL-00002" summary="ci: add develop branch">
+      <created>1599486749906</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599486749906</updated>
+    </task>
+    <task id="LOCAL-00003" summary="build: add @semantic-release/git dep">
+      <created>1599486863954</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1599486863954</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: remove the requirement to extends from Listener">
+      <created>1599588017012</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1599588017012</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,10 +129,52 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="build: configure semantic-release" />
+    <MESSAGE value="ci: add develop branch" />
+    <MESSAGE value="build: add @semantic-release/git dep" />
+    <MESSAGE value="feat: remove the requirement to extends from Listener" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: remove the requirement to extends from Listener" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="2333" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599502713898">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2333" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.0.1920.1036/3840.0.1920.1080@1920.0.1920.1080" timestamp="1599502713898" />
+    <state x="2561" y="321" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1599587980461">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2561" y="321" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/1920.0.1920.1080/0.0.1920.1036/3840.0.1920.1080@1920.0.1920.1080" timestamp="1599587980461" />
+    <state width="1887" height="254" key="GridCell.Tab.0.bottom" timestamp="1599588039829">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1887" height="254" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.0.1920.1036/3840.0.1920.1080@1920.0.1920.1080" timestamp="1599588039829" />
+    <state width="1887" height="254" key="GridCell.Tab.0.center" timestamp="1599588039829">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1887" height="254" key="GridCell.Tab.0.center/1920.0.1920.1080/0.0.1920.1036/3840.0.1920.1080@1920.0.1920.1080" timestamp="1599588039829" />
+    <state width="1887" height="254" key="GridCell.Tab.0.left" timestamp="1599588039829">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1887" height="254" key="GridCell.Tab.0.left/1920.0.1920.1080/0.0.1920.1036/3840.0.1920.1080@1920.0.1920.1080" timestamp="1599588039829" />
+    <state width="1887" height="254" key="GridCell.Tab.0.right" timestamp="1599588039829">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1887" height="254" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1036/3840.0.1920.1080@1920.0.1920.1080" timestamp="1599588039829" />
+    <state x="2243" y="67" key="SettingsEditor" timestamp="1599586949199">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2243" y="67" key="SettingsEditor/1920.0.1920.1080/0.0.1920.1036/3840.0.1920.1080@1920.0.1920.1080" timestamp="1599586949199" />
+    <state x="2375" y="184" key="Vcs.Push.Dialog.v2" timestamp="1599588028990">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2375" y="184" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.0.1920.1036/3840.0.1920.1080@1920.0.1920.1080" timestamp="1599588028990" />
     <state x="2557" y="130" key="git4idea.branch.GitSmartOperationDialog" timestamp="1599486357029">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2557" y="130" key="git4idea.branch.GitSmartOperationDialog/1920.0.1920.1080/0.0.1920.1036/3840.0.1920.1080@1920.0.1920.1080" timestamp="1599486357029" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/eventbus$All_Tests.info" NAME="All Tests Coverage Results" MODIFIED="1599502805716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

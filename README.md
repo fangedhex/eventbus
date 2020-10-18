@@ -45,7 +45,7 @@ class MyCustomEvent2 {
 }
 
 // 2 - Create your listener class
-class MyListener extends Listener {
+class MyListener {
   @EventHandler
   onSomething(ev: MyCustomEvent) {
     console.info("TEST : " + ev.value);
