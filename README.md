@@ -1,5 +1,13 @@
 # EventBus
 
+![GitHub](https://img.shields.io/github/license/fangedhex/eventbus)
+![npm (scoped)](https://img.shields.io/npm/v/@fangedhex/eventbus)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/fangedhex/eventbus/CI)
+![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/fangedhex/eventbus)
+![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@fangedhex/eventbus)
+![npm](https://img.shields.io/npm/dw/@fangedhex/eventbus)
+![npm](https://img.shields.io/npm/dm/@fangedhex/eventbus)
+
 ## Description
 
 A small typescript library that provide some eventbus system that is """easier""" to use.
@@ -45,7 +53,7 @@ class MyCustomEvent2 {
 }
 
 // 2 - Create your listener class
-class MyListener extends Listener {
+class MyListener {
   @EventHandler
   onSomething(ev: MyCustomEvent) {
     console.info("TEST : " + ev.value);
@@ -69,8 +77,4 @@ eventbus.dispatch(new MyCustomEvent2(5.8));
 
 ## Contributing
 
-I did this code in less than 1 day so it's pretty simple but if you know a better way to code it or you think
-my tests are not good, feel free to fork and make a pull request later :)
-
-I also added a FUNDING.yml in this project but I don't expect this project will bring some funding
-because it is quite simple to make.
+If you find any bugs or you want to give feedback feel free to do so :).

@@ -1,10 +1,10 @@
-import { EventBus, EventHandler, Listener } from "../src";
+import { EventBus, EventHandler } from "../src";
 
 class DummyEvent {
   constructor(readonly done: jest.DoneCallback) {}
 }
 
-class DummyListener extends Listener {
+class DummyListener {
   private isDefined = true;
 
   @EventHandler

@@ -1,6 +1,30 @@
 /// <reference types="reflect-metadata" />
-import { Listener } from "./Listener";
+import { EventFunction, Listener } from "./Listener";
 import { Event } from "./Event";
+import * as Debugger from "debug";
+
+const debug = Debugger("eventbus:event-handler");
+
+/**
+ * Create the event table on a listener object
+ * @param listener
+ * @internal
+ */
+function createTable(listener: Listener): void {
+  listener.eventsTable = [];
+}
+
+/**
+ * Function called by the decorator on a method to add it to the list
+ * @param listener
+ * @param fct
+ * @internal
+ */
+function addFunction(listener: Listener, fct: EventFunction): void {
+  if (!listener.eventsTable) createTable(listener);
+  debug("Adding event function to event table : %O", fct);
+  listener.eventsTable?.push(fct);
+}
 
 /**
  * Decorates a function as an event handler
@@ -8,8 +32,8 @@ import { Event } from "./Event";
  * @param propertyKey Name of the function
  * @param descriptor Descriptior of the function
  */
-export function EventHandler(
-  target: Listener,
+export function EventHandler<T>(
+  target: T & Listener,
   propertyKey: string,
   descriptor: PropertyDescriptor
 ): PropertyDescriptor {
@@ -26,7 +50,7 @@ export function EventHandler(
         }
       };
 
-      target.addFunction(descriptor.value);
+      addFunction(target, descriptor.value);
     }
   }
 
