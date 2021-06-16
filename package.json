@@ -36,8 +36,9 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:dev": "jest --watch --coverage",
-    "prepublishOnly": "yarn build",
-    "docs": "typedoc"
+    "prepublishOnly": "publish-please guard && yarn build",
+    "docs": "typedoc",
+    "publish-please": "publish-please"
   },
   "dependencies": {
     "debug": "^4.1.1",
